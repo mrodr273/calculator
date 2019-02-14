@@ -1,51 +1,32 @@
-/*var add = function(number1, number2) {
-  return number1 + number2;
-};
+$(document).ready(function() {
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = add(number1, number2);
-alert(result);
+    $('#blanks form').submit(function(event) {
+    event.preventDefault();
 
-var multiply = function(number1, number2) {
-  return number1 * number2;
-};
+    var addNumber1Input = parseInt($("input#addNumber1").val());
+    var addNumber2Input = parseInt($("input#addNumber2").val());
+    var subtractNumber1Input = parseInt($("input#subtractNumber1").val());
+    var subtractNumber2Input = parseInt($("input#subtractNumber2").val());
+    var multiplyNumber1Input = parseInt($("input#multiplyNumber1").val());
+    var multiplyNumber2Input = parseInt($("input#multiplyNumber2").val());
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var multi = multiply(number1, number2);
-alert(multi);
+    var addResult = add(addNumber1Input, addNumber2Input);
+    var subtractResult = subtract(subtractNumber1Input, subtractNumber2Input);
+    var multiplyResult = multiply(multiplyNumber1Input, multiplyNumber2Input);
 
-var add = function(number1, number2) {
-  return number1 + number2;
-};
+    $('.add').text(addResult);
+    $('.subtract').text(subtractResult);
+    $('.multiply').text(multiplyResult);
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = add(number1, number2);
-alert(result);
+    });
+  });
 
-var add = function(number1, number2) {
-  return number1 + number2;
-;
-
-ar number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = add(number1, number2);
-alert(multi);
-
-/*
-var BMI = function(weight, height) {
-return weight/height
-}
- var weight = parseInt(prompt("What's your weight?"));
- var height = parseInt(prompt("What's your height?"));
- alert("Your BMI = "+BMI(34, 434));
- */
-
- var celsius = function(F) {
-   var result=(F-32)*5/9;
-   return result
- }
-var c = parseInt(prompt("What's the Temp. (F)?"));
- alert("The temperture is (c) "+celsius(c));
+  var add = function(number1, number2) {
+    return number1 + number2;
+  };
+  var subtract = function(number1, number2) {
+    return number1 - number2;
+  };
+  var multiply = function(number1, number2) {
+    return number1 * number2;
+  };
